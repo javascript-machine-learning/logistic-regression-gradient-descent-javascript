@@ -1,17 +1,12 @@
-# Simple Node Server with Babel
+# Logistic Regression with Gradient Descent in JavaScript
 
-An easy way to get started with JavaScript on the command line.
+This example project demonstrates how [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent) may be used to solve a classification problem with [logistic regression](http://en.wikipedia.org/wiki/Linear_regression).
 
-## Requirements
-
-* [node & npm](https://nodejs.org/en/)
-* [git](https://www.robinwieruch.de/git-essential-commands/)
+[Read more about it here.](https://www.robinwieruch.de/logistic-regression-gradient-descent-javascript/)
 
 ## Installation
 
-* `git clone git@github.com:rwieruch/node-babel-server.git`
-* `cd node-babel-server`
+* `git clone git@github.com:javascript-machine-learning/logistic-regression-gradient-descent-javascript.git`
+* `cd logistic-regression-gradient-descent-javascript`
 * `npm install`
 * `npm start`
-
-Adjust your Babel presets in *package.json* if you like to add or remove future JavaScript ES features.
