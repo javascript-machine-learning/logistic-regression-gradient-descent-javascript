@@ -43,7 +43,7 @@ function init(matrix) {
   const ALPHA = 0.001;
   const ITERATIONS = 400;
 
-  theta = [[-24], [0.2], [0.2]];
+  theta = [[-25], [0], [0]];
   theta = gradientDescent(X, y, theta, ALPHA, ITERATIONS);
 
   const { cost: trainedThetaCost } = costFunction(theta, X, y)
@@ -53,7 +53,7 @@ function init(matrix) {
   console.log('cost: ', trainedThetaCost);
   console.log('\n');
 
-  // // Part 3: Predict admission of a student with exam scores 45 and 85
+  // Part 3: Predict admission of a student with exam scores 45 and 85
   console.log('Part 3: Admission Prediction ...\n');
 
   let studentVector = [1, 45, 85];
