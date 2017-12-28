@@ -1,11 +1,6 @@
 import math from 'mathjs';
 import csvToMatrix  from 'csv-to-array-matrix';
 
-import {
-  getDimensionSize,
-  pushVector,
-} from 'mathjs-util';
-
 csvToMatrix('./src/data.csv', init);
 
 function init(matrix) {
@@ -20,14 +15,14 @@ function init(matrix) {
     matrix,
   });
 
-  let m = getDimensionSize(y, 1);
-  let n = getDimensionSize(X, 2);
+  let m = y.length;
+  let n = X[0].length;
 
   // Part 1: Cost Function and Gradient
   console.log('Part 1: Cost Function and Gradient ...\n');
 
   // Add Intercept Term
-  X = pushVector(X, 0, math.ones([m, 1]).valueOf());
+  X = math.concat(math.ones([m, 1]).valueOf(), X);
 
   let theta = Array(n + 1).fill().map(() => [0]);
   let { cost: untrainedThetaCost, grad } = costFunction(theta, X, y);
@@ -75,7 +70,7 @@ function sigmoid(z) {
 
 function costFunction(theta, X, y) {
 
-  const m = getDimensionSize(y, 1);
+  const m = y.length;
 
   let h = sigmoid(math.eval(`X * theta`, {
     X,
@@ -99,7 +94,7 @@ function costFunction(theta, X, y) {
 }
 
 function gradientDescent(X, y, theta, ALPHA, ITERATIONS) {
-  const m = getDimensionSize(y, 1);
+  const m = y.length;
 
   for (let i = 0; i < ITERATIONS; i++) {
     let h = sigmoid(math.eval(`X * theta`, {
